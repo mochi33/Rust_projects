@@ -1,10 +1,11 @@
 use web_sys::Window;
 use web_sys::Document;
 
-marco_rules! log {
+#[macro_export]
+macro_rules! log {
     ($( $t:tt) *) => {
         web_sys::console::log_1(&format!( $($t)*).into());
-    }
+    };
 }
 
 pub fn window() -> Result<Window> {
